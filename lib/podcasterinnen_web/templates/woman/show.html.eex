@@ -7,6 +7,11 @@
     <%= @woman.forename %> <%= @woman.surname %>
   </li>
 
+  <li>
+    <strong>Biography:</strong>
+    <%= @woman.bio %>
+  </li>
+
   <%= if @woman.twitter do %>
     <li>
       <a href="<%= @woman.twitter %>" target="_blank"><%= @woman.forename %> on Twitter</a>
