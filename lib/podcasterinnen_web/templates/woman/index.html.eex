@@ -12,7 +12,7 @@
   <tbody>
 <%= for woman <- @women do %>
     <tr>
-      <td><%= woman.name %></td>
+      <td><%= woman.forename %> <%= woman.surname %></td>
       <td><%= woman.podcasts %></td>
 
       <td class="text-right">

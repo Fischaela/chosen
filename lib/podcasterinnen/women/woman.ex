@@ -4,7 +4,9 @@ defmodule Podcasterinnen.Women.Woman do
 
 
   schema "women" do
-    field :name, :string
+    field :forename, :string
+    field :surname, :string
+    field :twitter, :string
     field :podcasts, {:array, :string}
 
     timestamps()
@@ -13,7 +15,7 @@ defmodule Podcasterinnen.Women.Woman do
   @doc false
   def changeset(woman, attrs) do
     woman
-    |> cast(attrs, [:name, :podcasts])
-    |> validate_required([:name, :podcasts])
+    |> cast(attrs, [:forename, :surname, :twitter, :podcasts])
+    |> validate_required([:forename, :surname, :twitter, :podcasts])
   end
 end

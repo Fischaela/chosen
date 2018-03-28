@@ -4,8 +4,14 @@
 
   <li>
     <strong>Name:</strong>
-    <%= @woman.name %>
+    <%= @woman.forename %> <%= @woman.surname %>
   </li>
+
+  <%= if @woman.twitter do %>
+  <li>
+    <a href="<%= @woman.twitter %>" target="_blank"><%= @woman.forename %> on Twitter</a>
+  </li>
+  <% end %>
 
   <li>
     <strong>Podcasts:</strong>
