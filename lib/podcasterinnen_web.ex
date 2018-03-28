@@ -40,6 +40,7 @@ defmodule PodcasterinnenWeb do
       import PodcasterinnenWeb.Router.Helpers
       import PodcasterinnenWeb.ErrorHelpers
       import PodcasterinnenWeb.Gettext
+      import PodcasterinnenWeb.InputHelpers
     end
   end
 
