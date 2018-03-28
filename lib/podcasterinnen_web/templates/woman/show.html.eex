@@ -7,6 +7,18 @@
     <%= @woman.forename %> <%= @woman.surname %>
   </li>
 
+  <li>
+    <strong>Biography:</strong>
+    <%= @woman.bio %>
+  </li>
+
+  <%= if @woman.city && @woman.country do %>
+    <li>
+      <strong>I am from:</strong>
+      <%= @woman.city %>, <%= @woman.country %>
+    </li>
+  <% end %>
+
   <%= if @woman.twitter do %>
     <li>
       <a href="<%= @woman.twitter %>" target="_blank"><%= @woman.forename %> on Twitter</a>
@@ -19,6 +31,15 @@
       <a href="<%= @woman.website %>" target="_blank"><%= @woman.website %></a>
     </li>
   <% end %>
+
+  <li>
+    <strong>Does Remote Podcasts:</strong>
+    <%= if @woman.remote do %>
+      Yes
+    <% else %>
+      No
+    <% end %>
+  </li>
 
   <li>
     <strong>Podcasts:</strong>
