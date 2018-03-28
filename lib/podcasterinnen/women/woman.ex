@@ -9,6 +9,7 @@ defmodule Podcasterinnen.Women.Woman do
     field :twitter, :string
     field :website, :string
     field :podcasts, {:array, :string}
+    field :remote, :boolean
 
     timestamps()
   end
@@ -16,7 +17,7 @@ defmodule Podcasterinnen.Women.Woman do
   @doc false
   def changeset(woman, attrs) do
     woman
-    |> cast(attrs, [:forename, :surname, :twitter, :website, :podcasts])
-    |> validate_required([:forename, :surname, :twitter, :website, :podcasts])
+    |> cast(attrs, [:forename, :surname, :twitter, :website, :podcasts, :remote])
+    |> validate_required([:forename, :surname, :twitter, :website, :podcasts, :remote])
   end
 end

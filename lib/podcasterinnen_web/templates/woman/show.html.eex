@@ -21,6 +21,15 @@
   <% end %>
 
   <li>
+    <strong>Does Remote Podcasts:</strong>
+    <%= if @woman.remote do %>
+      Yes
+    <% else %>
+      No
+    <% end %>
+  </li>
+
+  <li>
     <strong>Podcasts:</strong>
     <ul>
       <%= for podcast <- @woman.podcasts do %>
