@@ -1,0 +1,28 @@
+<h2>Listing Women</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Podcasts</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for woman <- @women do %>
+    <tr>
+      <td><%= woman.name %></td>
+      <td><%= woman.podcasts %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: woman_path(@conn, :show, woman), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: woman_path(@conn, :edit, woman), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: woman_path(@conn, :delete, woman), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Woman", to: woman_path(@conn, :new) %></span>
