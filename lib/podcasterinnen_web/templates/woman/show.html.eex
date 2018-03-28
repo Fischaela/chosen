@@ -12,6 +12,13 @@
     <%= @woman.bio %>
   </li>
 
+  <%= if @woman.city && @woman.country do %>
+    <li>
+      <strong>I am from:</strong>
+      <%= @woman.city %>, <%= @woman.country %>
+    </li>
+  <% end %>
+
   <%= if @woman.twitter do %>
     <li>
       <a href="<%= @woman.twitter %>" target="_blank"><%= @woman.forename %> on Twitter</a>
