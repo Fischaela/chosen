@@ -3,7 +3,7 @@ defmodule Podcasterinnen.Repo.Migrations.AddFieldsToWoman do
 
   def change do
     alter table(:women) do
-      remove :name, :string
+      remove :name
       add :forename, :string
       add :surname, :string
       add :twitter, :string
