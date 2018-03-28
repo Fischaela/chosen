@@ -8,14 +8,25 @@
   </li>
 
   <%= if @woman.twitter do %>
-  <li>
-    <a href="<%= @woman.twitter %>" target="_blank"><%= @woman.forename %> on Twitter</a>
-  </li>
+    <li>
+      <a href="<%= @woman.twitter %>" target="_blank"><%= @woman.forename %> on Twitter</a>
+    </li>
+  <% end %>
+
+  <%= if @woman.website do %>
+    <li>
+      <strong>Website:</strong>
+      <a href="<%= @woman.website %>" target="_blank"><%= @woman.website %></a>
+    </li>
   <% end %>
 
   <li>
     <strong>Podcasts:</strong>
-    <%= @woman.podcasts %>
+    <ul>
+      <%= for podcast <- @woman.podcasts do %>
+        <li><%= podcast %></li>
+      <% end %>
+    </ul>
   </li>
 
 </ul>

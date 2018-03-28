@@ -13,7 +13,13 @@
 <%= for woman <- @women do %>
     <tr>
       <td><%= woman.forename %> <%= woman.surname %></td>
-      <td><%= woman.podcasts %></td>
+      <td>
+        <ul>
+          <%= for podcast <- woman.podcasts do %>
+            <li><%= podcast %></li>
+          <% end %>
+        </ul>
+      </td>
 
       <td class="text-right">
         <span><%= link "Show", to: woman_path(@conn, :show, woman), class: "btn btn-default btn-xs" %></span>
