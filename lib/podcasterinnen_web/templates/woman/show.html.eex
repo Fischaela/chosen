@@ -1,0 +1,18 @@
+<h2>Show Woman</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @woman.name %>
+  </li>
+
+  <li>
+    <strong>Podcasts:</strong>
+    <%= @woman.podcasts %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: woman_path(@conn, :edit, @woman) %></span>
+<span><%= link "Back", to: woman_path(@conn, :index) %></span>
