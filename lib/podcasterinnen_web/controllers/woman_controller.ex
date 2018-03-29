@@ -4,6 +4,19 @@ defmodule PodcasterinnenWeb.WomanController do
   alias Podcasterinnen.Women
   alias Podcasterinnen.Women.Woman
 
+  plug :secure
+
+  defp secure(conn, _params) do
+    user = get_session(conn, :current_user)
+    case user do
+     nil ->
+         conn |> redirect(to: "/auth/auth0") |> halt
+     _ ->
+       conn
+       |> assign(:current_user, user)
+    end
+  end
+
   def index(conn, _params) do
     women = Women.list_women()
     render(conn, "index.html", women: women)

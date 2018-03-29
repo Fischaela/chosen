@@ -12,6 +12,31 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Home</a>
+        </div>
+        <div class="container navbar-left">
+          <ul class="nav navbar-nav">
+            <%= if @current_user do %>
+              <li class="nav-item"><a class="nav-link" href="/women">Podcasterinnen</a></li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-default navbar-btn">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </button>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <button type="button" class="btn btn-default navbar-btn">
+                  <a class="nav-link" href="/auth/auth0">Login</a>
+                </button>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <div class="container">
       <h1>Podcasterinnen</h1>
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
