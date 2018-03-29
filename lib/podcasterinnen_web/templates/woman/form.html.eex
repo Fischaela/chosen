@@ -61,6 +61,27 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :languages, class: "control-label" %>
+    <%= array_input f, :languages %>
+    <%= array_add_button f, :languages %>
+    <%= error_tag f, :languages %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :references, class: "control-label" %>
+    <%= array_input f, :references %>
+    <%= array_add_button f, :references %>
+    <%= error_tag f, :references %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :topics, class: "control-label" %>
+    <%= array_input f, :topics %>
+    <%= array_add_button f, :topics %>
+    <%= error_tag f, :topics %>
+  </div>
+
+  <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
