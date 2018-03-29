@@ -7,10 +7,12 @@
     <%= @woman.forename %> <%= @woman.surname %>
   </li>
 
-  <li>
-    <strong>Biography:</strong>
-    <%= @woman.bio %>
-  </li>
+  <%= if @woman.bio do %>
+    <li>
+      <strong>Biography:</strong>
+      <%= @woman.bio %>
+    </li>
+  <% end %>
 
   <%= if @woman.city && @woman.country do %>
     <li>
@@ -49,6 +51,39 @@
       <% end %>
     </ul>
   </li>
+
+  <%= if @woman.languages do %>
+    <li>
+      <strong>Languages:</strong>
+      <ul>
+        <%= for language <- @woman.languages do %>
+          <li><%= language %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+
+  <%= if @woman.references do %>
+    <li>
+      <strong>References:</strong>
+      <ul>
+        <%= for reference <- @woman.references do %>
+          <li><%= reference %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+
+  <%= if @woman.topics do %>
+    <li>
+      <strong>Topics:</strong>
+      <ul>
+        <%= for topic <- @woman.topics do %>
+          <li><%= topic %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
 
 </ul>
 
