@@ -14,7 +14,7 @@
     <tr>
       <td><%= woman.forename %> <%= woman.surname %></td>
       <td>
-        <ul>
+        <ul class="table__list">
           <%= for podcast <- woman.podcasts do %>
             <li><%= podcast %></li>
           <% end %>
@@ -31,4 +31,4 @@
   </tbody>
 </table>
 
-<span><%= link "New Woman", to: woman_path(@conn, :new) %></span>
+<%= link "New Woman", to: woman_path(@conn, :new), class: "btn btn-primary"%>
