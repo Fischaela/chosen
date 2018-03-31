@@ -8,53 +8,36 @@
     <meta name="author" content="Michaela Lehr">
 
     <title>Podcasterinnen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Home</a>
-        </div>
-        <div class="container navbar-left">
-          <ul class="nav navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="/women">Podcasterinnen</a></li>
-            <%= if @current_user do %>
-              <li class="nav-item">
-                <%= link "My Profile", to: woman_path(@conn, :new)%>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-default navbar-btn">
-                  <a class="nav-link" href="/logout">Logout</a>
-                </button>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <button type="button" class="btn btn-default navbar-btn">
-                  <a class="nav-link" href="/auth/auth0">Login</a>
-                </button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-default navbar-btn">
-                  <a class="nav-link" href="/auth/auth0">Sign Up</a>
-                </button>
-              </li>
-            <% end %>
-          </ul>
-        </div>
+    <header class="header">
+      <nav class="nav" role="navigation">
+        <a class="nav__link" href="/">Home</a>
+        <a class="nav__link" href="/women">Podcasterinnen</a>
+        <%= if @current_user do %>
+          <%= link "My Profile", to: woman_path(@conn, :new), class: "nav__link"%>
+          <button type="button" class="nav__button">
+            <a href="/logout">Logout</a>
+          </button>
+        <% else %>
+          <button type="button" class="nav__button">
+            <a href="/auth/auth0">Login</a>
+          </button>
+          <button type="button" class="nav__button">
+            <a href="/auth/auth0">Sign Up</a>
+          </button>
+        <% end %>
       </nav>
     </header>
-    <div class="container">
-      <h1>Podcasterinnen</h1>
+    <main class="main" role="main">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div>
+      <%= render @view_module, @view_template, assigns %>
+    </main>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

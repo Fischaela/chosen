@@ -1,91 +1,83 @@
-<h2>Show Woman</h2>
-
-<ul>
-
-  <li>
-    <strong>Name:</strong>
-    <%= @woman.forename %> <%= @woman.surname %>
-  </li>
-
-  <%= if @woman.bio do %>
+<div class="hero">
+  <div class="hero__content hero__content--small">
+    <h2>Show Woman</h2>
+  </div>
+</div>
+<div class="article">
+  <ul>
     <li>
-      <strong>Biography:</strong>
-      <%= @woman.bio %>
+      <strong>Name:</strong>
+      <%= @woman.forename %> <%= @woman.surname %>
     </li>
-  <% end %>
-
-  <%= if @woman.city && @woman.country do %>
-    <li>
-      <strong>I am from:</strong>
-      <%= @woman.city %>, <%= @woman.country %>
-    </li>
-  <% end %>
-
-  <%= if @woman.twitter do %>
-    <li>
-      <a href="<%= @woman.twitter %>" target="_blank"><%= @woman.forename %> on Twitter</a>
-    </li>
-  <% end %>
-
-  <%= if @woman.website do %>
-    <li>
-      <strong>Website:</strong>
-      <a href="<%= @woman.website %>" target="_blank"><%= @woman.website %></a>
-    </li>
-  <% end %>
-
-  <li>
-    <strong>Does Remote Podcasts:</strong>
-    <%= if @woman.remote do %>
-      Yes
-    <% else %>
-      No
+    <%= if @woman.bio do %>
+      <li>
+        <strong>Biography:</strong>
+        <%= @woman.bio %>
+      </li>
     <% end %>
-  </li>
-
-  <li>
-    <strong>Podcasts:</strong>
-    <ul>
-      <%= for podcast <- @woman.podcasts do %>
-        <li><%= podcast %></li>
+    <%= if @woman.city && @woman.country do %>
+      <li>
+        <strong>I am from:</strong>
+        <%= @woman.city %>, <%= @woman.country %>
+      </li>
+    <% end %>
+    <%= if @woman.twitter do %>
+      <li>
+        <a href="<%= @woman.twitter %>" target="_blank"><%= @woman.forename %> on Twitter</a>
+      </li>
+    <% end %>
+    <%= if @woman.website do %>
+      <li>
+        <strong>Website:</strong>
+        <a href="<%= @woman.website %>" target="_blank"><%= @woman.website %></a>
+      </li>
+    <% end %>
+    <li>
+      <strong>Does Remote Podcasts:</strong>
+      <%= if @woman.remote do %>
+        Yes
+      <% else %>
+        No
       <% end %>
-    </ul>
-  </li>
-
-  <%= if @woman.languages do %>
+    </li>
     <li>
-      <strong>Languages:</strong>
+      <strong>Podcasts:</strong>
       <ul>
-        <%= for language <- @woman.languages do %>
-          <li><%= language %></li>
+        <%= for podcast <- @woman.podcasts do %>
+          <li><%= podcast %></li>
         <% end %>
       </ul>
     </li>
-  <% end %>
-
-  <%= if @woman.references do %>
-    <li>
-      <strong>References:</strong>
-      <ul>
-        <%= for reference <- @woman.references do %>
-          <li><%= reference %></li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
-
-  <%= if @woman.topics do %>
-    <li>
-      <strong>Topics:</strong>
-      <ul>
-        <%= for topic <- @woman.topics do %>
-          <li><%= topic %></li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
-
-</ul>
-
-<span><%= link "Edit", to: woman_path(@conn, :edit, @woman) %></span>
-<span><%= link "Back", to: woman_path(@conn, :index) %></span>
+    <%= if @woman.languages do %>
+      <li>
+        <strong>Languages:</strong>
+        <ul>
+          <%= for language <- @woman.languages do %>
+            <li><%= language %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+    <%= if @woman.references do %>
+      <li>
+        <strong>References:</strong>
+        <ul>
+          <%= for reference <- @woman.references do %>
+            <li><%= reference %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+    <%= if @woman.topics do %>
+      <li>
+        <strong>Topics:</strong>
+        <ul>
+          <%= for topic <- @woman.topics do %>
+            <li><%= topic %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+  <p><%= link "Back", to: woman_path(@conn, :index) %></p>
+</div>

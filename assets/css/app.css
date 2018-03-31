@@ -1,10 +1,193 @@
-/* This file is for your main application css. */
-.input_container input.form-control {
-  display: inline-block;
-  margin: 5px 5px 0 0;
-  width: 90%;
+:root {
+  --color-red: #A84E54;
+  --color-blue: #3799AB;
+  --color-blue-transparent: rgba(197, 213, 216, 0.8);
 }
 
-.table__list {
+/**************/
+/* TYPOGRAPHY */
+/**************/
+
+html {
+  font-size: 1em;
+}
+
+body {
+  color: #000000;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.45em;
+}
+
+p {
+  margin-bottom: 1.3em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: inherit;
+  line-height: 1.2;
+
+  margin: 1.414em 0 0.5em;
+}
+
+h1 {
+  font-family: "Abril Fatface";
+  font-size: 6.854em;
+
+  margin-top: 0;
+}
+
+h2 {
+  font-family: "Abril Fatface";
+  font-size: 4.236em;
+}
+
+h3 {
+  color: var(--color-blue);
+  font-size: 2.618em;
+}
+
+h4 {
+  font-family: "Oswald";
+  font-size: 1.618em;
+}
+
+small,
+.font_small {
+  font-size: 0.618em;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav a:active,
+nav a.active,
+nav a:hover {
+  color: var(--color-blue);
+}
+
+/***************/
+/* HEADER, NAV */
+/***************/
+
+.header {
+  background-color: var(--color-blue-transparent);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav__button {
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 1em;
+
+  background-color: var(--color-red);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  cursor: pointer;
+  padding: 0.25em 1em 0.3em 1em;
+  transition: all 0.15s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__button:active,
+.nav__button:hover {
+  box-shadow: none;
+  transform: translateY(1px);
+}
+
+.nav__button:active a,
+.nav__button:hover a {
+  color: #FFFFFF;
+}
+
+.nav__link {
+  display: inline-block;
+  padding: 16px;
+}
+
+/**********/
+/* LAYOUT */
+/**********/
+
+.alert {
   margin: 0;
+}
+
+.article {
+  margin: 0 auto;
+  padding: 40px 40px 40px 40px;
+  max-width: 800px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.card {
+  background-color: #F3EEEF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin: 10px;
+  padding: 20px;
+}
+
+.card__more {
+  margin: 20px 0 0 0;
+}
+
+.card__more__link {
+  color: inherit;
+  text-decoration: none;
+
+  background-color: var(--color-blue-transparent);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  display: inline-block;
+  padding: 0.25em 1em;
+  transition: all 0.15s cubic-bezier(.25,.8,.25,1);
+}
+
+.card__more__link:active,
+.card__more__link:hover {
+  box-shadow: none;
+  transform: translateY(1px);
+}
+
+.hero__content {
+  text-align: center;
+
+  margin: 0 auto;
+  padding: 180px 40px 120px 40px;
+  max-width: 1200px;
+}
+
+.hero__content--small {
+  padding: 60px 40px 30px 40px;
+}
+
+.hero__headline {
+  position: relative;
+}
+
+.hero__headline::after {
+  background-color: #000000;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 2px;
 }
