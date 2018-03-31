@@ -22,6 +22,9 @@
             <li class="nav-item"><a class="nav-link" href="/women">Podcasterinnen</a></li>
             <%= if @current_user do %>
               <li class="nav-item">
+                <%= link "My Profile", to: woman_path(@conn, :new)%>
+              </li>
+              <li class="nav-item">
                 <button type="button" class="btn btn-default navbar-btn">
                   <a class="nav-link" href="/logout">Logout</a>
                 </button>
