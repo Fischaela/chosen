@@ -1,5 +1,9 @@
-<h2>New Woman</h2>
-
-<%= render "form.html", Map.put(assigns, :action, woman_path(@conn, :create)) %>
-
-<span><%= link "Back", to: woman_path(@conn, :index) %></span>
+<div class="hero">
+  <div class="hero__content hero__content--small">
+    <h2>New Woman</h2>
+  </div>
+</div>
+<div class="article">
+  <%= render "form.html", Map.put(assigns, :action, woman_path(@conn, :create)) %>
+  <span><%= link "Back", to: woman_path(@conn, :index) %></span>
+</div>
