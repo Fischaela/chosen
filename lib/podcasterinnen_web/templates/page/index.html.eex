@@ -1,3 +1,7 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Podcasterinnnen" %></h2>
+<div class="hero">
+  <div class="hero__content">
+    <h1 class="hero__headline">podcasterinnen.org</h1>
+    <h3>Frauen* und Technik. Frauen* und Inahlte.<br>
+    Frauen hinter dem Mikro und auf der Bühne.</h3>
+  </div>
 </div>
