@@ -6,43 +6,43 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :forename, class: "control-label" %>
-    <%= text_input f, :forename, class: "form-control" %>
+    <%= label f, :forename, class: "form__label" %>
+    <%= text_input f, :forename, class: "form__input__text" %>
     <%= error_tag f, :forename %>
   </div>
 
   <div class="form-group">
-    <%= label f, :surname, class: "control-label" %>
-    <%= text_input f, :surname, class: "form-control" %>
+    <%= label f, :surname, class: "form__label" %>
+    <%= text_input f, :surname, class: "form__input__text" %>
     <%= error_tag f, :surname %>
   </div>
 
   <div class="form-group">
-    <%= label f, :city, class: "control-label" %>
-    <%= text_input f, :city, class: "form-control" %>
+    <%= label f, :city, class: "form__label" %>
+    <%= text_input f, :city, class: "form__input__text" %>
     <%= error_tag f, :city %>
   </div>
 
   <div class="form-group">
-    <%= label f, :country, class: "control-label" %>
-    <%= text_input f, :country, class: "form-control" %>
+    <%= label f, :country, class: "form__label" %>
+    <%= text_input f, :country, class: "form__input__text" %>
     <%= error_tag f, :country %>
   </div>
 
   <div class="form-group">
-    <%= label f, :twitter, class: "control-label" %>
-    <%= text_input f, :twitter, class: "form-control" %>
+    <%= label f, :twitter, class: "form__label" %>
+    <%= text_input f, :twitter, class: "form__input__text" %>
     <%= error_tag f, :twitter %>
   </div>
 
   <div class="form-group">
-    <%= label f, :website, class: "control-label" %>
-    <%= text_input f, :website, class: "form-control" %>
+    <%= label f, :website, class: "form__label" %>
+    <%= text_input f, :website, class: "form__input__text" %>
     <%= error_tag f, :website %>
   </div>
 
   <div class="form-group">
-    <%= label f, :podcasts, class: "control-label" %>
+    <%= label f, :podcasts, class: "form__label" %>
     <%= array_input f, :podcasts %>
     <%= array_add_button f, :podcasts %>
     <%= error_tag f, :podcasts %>
@@ -55,27 +55,27 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :bio, class: "control-label" %>
-    <%= textarea f, :bio, class: "form-control" %>
+    <%= label f, :bio, class: "form__label" %>
+    <%= textarea f, :bio, class: "form__input__text" %>
     <%= error_tag f, :bio %>
   </div>
 
   <div class="form-group">
-    <%= label f, :languages, class: "control-label" %>
+    <%= label f, :languages, class: "form__label" %>
     <%= array_input f, :languages %>
     <%= array_add_button f, :languages %>
     <%= error_tag f, :languages %>
   </div>
 
   <div class="form-group">
-    <%= label f, :references, class: "control-label" %>
+    <%= label f, :references, class: "form__label" %>
     <%= array_input f, :references %>
     <%= array_add_button f, :references %>
     <%= error_tag f, :references %>
   </div>
 
   <div class="form-group">
-    <%= label f, :topics, class: "control-label" %>
+    <%= label f, :topics, class: "form__label" %>
     <%= array_input f, :topics %>
     <%= array_add_button f, :topics %>
     <%= error_tag f, :topics %>
