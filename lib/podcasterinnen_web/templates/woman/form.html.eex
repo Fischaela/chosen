@@ -82,6 +82,10 @@
   </div>
 
   <div class="form-group">
+    <%= hidden_input f, :authId, value: @current_user.id %>
+  </div>
+
+  <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
