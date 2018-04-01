@@ -16,6 +16,7 @@ defmodule Podcasterinnen.Women.Woman do
     field :languages, {:array, :string}
     field :references, {:array, :string}
     field :topics, {:array, :string}
+    field :authId, :string
 
     timestamps()
   end
@@ -23,7 +24,7 @@ defmodule Podcasterinnen.Women.Woman do
   @doc false
   def changeset(woman, attrs) do
     woman
-    |> cast(attrs, [:forename, :surname, :city, :country, :twitter, :website, :podcasts, :remote, :bio, :languages, :references, :topics])
+    |> cast(attrs, [:forename, :surname, :city, :country, :twitter, :website, :podcasts, :remote, :bio, :languages, :references, :topics, :authId])
     |> validate_required([:forename, :surname, :city, :country, :twitter, :website, :podcasts, :remote, :bio, :languages, :references, :topics])
   end
 end
