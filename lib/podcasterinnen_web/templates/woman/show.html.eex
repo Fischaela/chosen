@@ -76,4 +76,7 @@
     <% end %>
   </ul>
   <p><%= link "Back", to: woman_path(@conn, :index) %></p>
+  <%= if @current_user do %>
+    <p><%= link "Edit", to: woman_path(@conn, :edit, @woman) %></p>
+  <% end %>
 </div>
