@@ -37,6 +37,10 @@ defmodule Podcasterinnen.Women do
   """
   def get_woman!(id), do: Repo.get!(Woman, id)
 
+  def get_woman_by_auth!(id) do
+    Repo.get_by!(Woman, [authId: id])
+  end
+
   @doc """
   Creates a woman.
 

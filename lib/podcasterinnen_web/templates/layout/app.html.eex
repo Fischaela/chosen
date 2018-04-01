@@ -19,7 +19,7 @@
         <a class="nav__link" href="/">Home</a>
         <a class="nav__link" href="/women">Podcasterinnen</a>
         <%= if @current_user do %>
-          <%= link "My Profile", to: woman_path(@conn, :new), class: "nav__link"%>
+          <%= link "My Profile", to: woman_path(@conn, :show, @current_user.id), class: "nav__link"%>
           <button type="button" class="nav__button">
             <a href="/logout">Logout</a>
           </button>
