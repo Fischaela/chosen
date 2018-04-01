@@ -1,14 +1,10 @@
 <div class="hero">
   <div class="hero__content hero__content--small">
-    <h2>Show Woman</h2>
+    <h2><%= @woman.forename %> <%= @woman.surname %></h2>
   </div>
 </div>
 <div class="article">
   <ul>
-    <li>
-      <strong>Name:</strong>
-      <%= @woman.forename %> <%= @woman.surname %>
-    </li>
     <%= if @woman.bio do %>
       <li>
         <strong>Biography:</strong>
@@ -80,4 +76,7 @@
     <% end %>
   </ul>
   <p><%= link "Back", to: woman_path(@conn, :index) %></p>
+  <%= if @current_user do %>
+    <p><%= link "Edit", to: woman_path(@conn, :edit, @woman) %></p>
+  <% end %>
 </div>
