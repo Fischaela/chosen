@@ -1,7 +1,7 @@
 :root {
   --color-red: #A84E54;
-  --color-blue: #3799AB;
-  --color-blue-transparent: rgba(197, 213, 216, 0.8);
+  --color-blue: #7797AE;
+  --color-blue-transparent: rgba(119, 151, 174, 0.8);
 }
 
 /**************/
@@ -119,7 +119,11 @@ nav a:hover {
 /**********/
 
 .alert {
-  margin: 0;
+  text-align: center;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .article {
@@ -190,4 +194,16 @@ nav a:hover {
   transform: translateX(-50%);
   width: 400px;
   height: 2px;
+}
+
+/* FORMS */
+
+.form__input__text {
+  color: #636363;
+  font-size: inherit;
+  font-family: inherit;
+
+  margin: 0.5em 0 1.5em 0;
+  padding: 0.5em;
+  width: 100%;
 }

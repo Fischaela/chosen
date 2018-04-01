@@ -14,7 +14,7 @@ defmodule PodcasterinnenWeb.InputHelpers do
           name: new_field_name(form,field),
           value: value,
           id: new_id,
-          class: "form-control"
+          class: "form__input__text"
         ]
         form_elements(form,field, value, index)
       end)
@@ -40,7 +40,7 @@ defmodule PodcasterinnenWeb.InputHelpers do
       name: new_field_name(form,field),
       value: value,
       id: new_id,
-      class: "form-control"
+      class: "form__input__text"
     ]
     content_tag :li do
       [
