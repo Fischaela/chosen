@@ -38,6 +38,15 @@
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= render @view_module, @view_template, assigns %>
     </main>
+    <footer class="footer">
+      <nav class"nav" role="navigation">
+        <a class="nav__link" href="/imprint">Impressum</a>
+        <a class="nav__link" href="/faq">FAQs</a>
+        <a class="nav__link" href="/privacy">Datenschutz</a>
+        <a class="nav__link" href="/about">Über Uns</a>
+        <a class="nav__link" href="/contact">Kontakt</a>
+      </nav>
+    </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
