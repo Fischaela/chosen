@@ -1,6 +1,8 @@
 <div class="hero">
   <div class="hero__content hero__content--small">
-    <h2><%= @woman.forename %> <%= @woman.surname %></h2>
+    <%= if @woman.forename && @woman.surname do %>
+      <h2><%= @woman.forename %> <%= @woman.surname %></h2>
+    <% end %>
   </div>
 </div>
 <div class="article">
@@ -36,14 +38,16 @@
         No
       <% end %>
     </li>
-    <li>
-      <strong>Podcasts:</strong>
-      <ul>
-        <%= for podcast <- @woman.podcasts do %>
-          <li><%= podcast %></li>
-        <% end %>
-      </ul>
-    </li>
+    <%= if @woman.podcasts do %>
+      <li>
+        <strong>Podcasts:</strong>
+        <ul>
+          <%= for podcast <- @woman.podcasts do %>
+            <li><%= podcast %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
     <%= if @woman.languages do %>
       <li>
         <strong>Languages:</strong>
