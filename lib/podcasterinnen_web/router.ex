@@ -27,6 +27,8 @@ defmodule PodcasterinnenWeb.Router do
 
     get "/", PageController, :index
     get "/imprint", ImprintController, :index
+    get "/faq", FAQController, :index
+    get "/privacy", PrivacyController, :index
     resources "/women", WomanController
     get "/logout", AuthController, :logout
   end

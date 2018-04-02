@@ -41,6 +41,8 @@
     <footer class="footer">
       <nav class"nav" role="navigation">
         <a class="nav__link" href="/imprint">Impressum</a>
+        <a class="nav__link" href="/faq">FAQs</a>
+        <a class="nav__link" href="/privacy">Datenschutz</a>
       </nav>
     </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
