@@ -2,6 +2,17 @@
   --color-red: #A84E54;
   --color-blue: #7797AE;
   --color-blue-transparent: rgba(119, 151, 174, 0.8);
+  --color-blue-light: #E6ECF0;
+  --color-blue-dark: #002436;
+  --footer-height: 55px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  min-height: calc(100vh - var(--footer-height));
 }
 
 /**************/
@@ -112,6 +123,16 @@ nav a:hover {
 .nav__link {
   display: inline-block;
   padding: 16px;
+}
+
+/**********/
+/* FOOTER */
+/**********/
+
+.footer {
+  color: var(--color-blue-light);
+
+  background-color: var(--color-blue-dark);
 }
 
 /**********/

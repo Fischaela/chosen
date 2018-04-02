@@ -26,6 +26,11 @@ defmodule PodcasterinnenWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/about", AboutController, :index
+    get "/contact", ContactController, :index
+    get "/imprint", ImprintController, :index
+    get "/faq", FAQController, :index
+    get "/privacy", PrivacyController, :index
     resources "/women", WomanController
     get "/logout", AuthController, :logout
   end
