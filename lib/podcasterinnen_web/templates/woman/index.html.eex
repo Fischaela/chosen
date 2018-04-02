@@ -5,15 +5,17 @@
 </div>
 <div class="cards">
   <%= for woman <- @women do %>
-    <div class="card">
-      <h4><%= woman.forename %> <%= woman.surname %></h4>
-      <h5>Podcasts:</h5>
-      <ul>
-        <%= for podcast <- woman.podcasts do %>
-          <li><%= podcast %></li>
-          <% end %>
-      </ul>
-      <p class="card__more"><%= link "More", to: woman_path(@conn, :show, woman), class: "card__more__link" %></p>
-    </div>
+    <%= if woman.forename && woman.surname && woman.podcasts do %>
+      <div class="card">
+        <h4><%= woman.forename %> <%= woman.surname %></h4>
+        <h5>Podcasts:</h5>
+        <ul>
+          <%= for podcast <- woman.podcasts do %>
+            <li><%= podcast %></li>
+            <% end %>
+        </ul>
+        <p class="card__more"><%= link "More", to: woman_path(@conn, :show, woman), class: "card__more__link" %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>

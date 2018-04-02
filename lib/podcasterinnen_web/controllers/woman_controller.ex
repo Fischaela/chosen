@@ -38,7 +38,7 @@ defmodule PodcasterinnenWeb.WomanController do
 
   def show(conn, %{"id" => id}) do
     if String.starts_with? id, "auth0" do
-      woman = Women.get_woman_by_auth!(id)
+      woman = Women.get_woman_by_auth(id)
     else
       woman = Women.get_woman!(id)
     end

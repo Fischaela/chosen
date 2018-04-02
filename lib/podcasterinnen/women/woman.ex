@@ -25,6 +25,5 @@ defmodule Podcasterinnen.Women.Woman do
   def changeset(woman, attrs) do
     woman
     |> cast(attrs, [:forename, :surname, :city, :country, :twitter, :website, :podcasts, :remote, :bio, :languages, :references, :topics, :authId])
-    |> validate_required([:forename, :surname, :city, :country, :twitter, :website, :podcasts, :remote, :bio, :languages, :references, :topics])
   end
 end

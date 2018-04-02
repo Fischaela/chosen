@@ -37,8 +37,25 @@ defmodule Podcasterinnen.Women do
   """
   def get_woman!(id), do: Repo.get!(Woman, id)
 
-  def get_woman_by_auth!(id) do
-    Repo.get_by!(Woman, [authId: id])
+  @doc """
+  Gets a single woman by her auth0 id.
+
+  Returns `nil` and creates a new Woman if the Woman does not exist.
+
+  ## Examples
+
+      iex> get_woman_by_auth(auth0|5ac1ee0449c317236e3beca7)
+      %Woman{}
+
+      iex> get_woman_by_auth(auth0|5ac1ee0449c317236e3beca7)
+      nil
+  """
+  def get_woman_by_auth(id) do
+    case Repo.get_by(Woman, [authId: id]) do
+      struct when is_map(struct) ->
+        struct
+      nil -> create_woman(%{authId: id})
+    end
   end
 
   @doc """
